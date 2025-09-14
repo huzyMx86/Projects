@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STIX Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="app-header">
+        <h1>STIX Threat Intelligence Converter</h1>
+        <p class="subtitle">
+          Convert natural language threat intelligence into structured STIX JSON
+        </p>
+      </header>
+
+      <div class="io-wrapper">
+        <div class="input-section">
+          <div class="input-header">
+            <h3>Threat Intelligence Input</h3>
+          </div>
+
+          <div class="input-container">
+            <div class="input-area">
+              <textarea
+                id="inputArea"
+                placeholder="Enter threat intelligence in plain English..."
+                rows="12"
+              ></textarea>
+            </div>
+
+            <div class="suggestions-area">
+              <div class="suggestions-panel">
+                <h4>Live Suggestions</h4>
+                <div id="suggestionsList" class="suggestions-list">
+                  <div class="suggestion-item">
+                    <span class="suggestion-icon">🔍</span>
+                    <span
+                      >Type threat intelligence terms to see
+                      suggestions...</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relationships-section">
+          <div class="relationships-header">
+            <h3>STIX Relationships</h3>
+            <button id="addRelationshipBtn" class="secondary-btn">
+              Add Relationship
+            </button>
+          </div>
+
+          <div class="relationships-container">
+            <div id="relationshipsList" class="relationships-list">
+              <div class="relationship-item">
+                <span class="relationship-icon">🔗</span>
+                <span
+                  >No relationships created yet. Click "Add Relationship" to
+                  create one.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button id="generateBtn" class="primary-btn" disabled>
+              Generate STIX
+            </button>
+            <button id="clearBtn" class="secondary-btn" disabled>Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-grid">
+          <div class="info-item">
+            <h4>Input & Relationships</h4>
+            <p>
+              Enter threat intelligence and add relationships between detected
+              objects on the same page for a streamlined workflow.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>Intelligent Detection</h4>
+            <p>
+              Automatically detects hashes, IPs, domains, emails, malware types,
+              attack patterns, and threat actors.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>Live Suggestions</h4>
+            <p>
+              Real-time word suggestions based on threat intelligence vocabulary
+              as you type.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>STIX Generation</h4>
+            <p>
+              Generate compliant STIX JSON with proper object relationships and
+              validation results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Relationship Modal -->
+    <div id="relationshipModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Create STIX Relationship</h3>
+          <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="relationshipForm">
+            <label for="sourceObject">Source Object:</label>
+            <select id="sourceObject" required>
+              <option value="">Select source object...</option>
+            </select>
+
+            <label for="targetObject">Target Object:</label>
+            <select id="targetObject" required>
+              <option value="">Select target object...</option>
+            </select>
+
+            <label for="relationshipType">Relationship Type:</label>
+            <select id="relationshipType" required>
+              <option value="">Select relationship type...</option>
+              <option value="indicates">Indicates</option>
+              <option value="attributed-to">Attributed To</option>
+              <option value="uses">Uses</option>
+              <option value="targets">Targets</option>
+              <option value="located-at">Located At</option>
+              <option value="communicates-with">Communicates With</option>
+              <option value="controls">Controls</option>
+              <option value="owns">Owns</option>
+              <option value="part-of">Part Of</option>
+              <option value="consists-of">Consists Of</option>
+              <option value="variant-of">Variant Of</option>
+              <option value="mitigates">Mitigates</option>
+              <option value="detects">Detects</option>
+              <option value="related-to">Related To</option>
+            </select>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="cancelRelationshipBtn" class="secondary-btn">
+            Cancel
+          </button>
+          <button id="saveRelationshipBtn" class="primary-btn">
+            Create Relationship
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STIX Threat Intelligence Converter</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="landing-container">
+      <header class="landing-header">
+        <h1>STIX Threat Intelligence Converter</h1>
+        <p class="landing-subtitle">
+          Transform natural language threat intelligence into structured STIX
+          JSON format
+        </p>
+      </header>
+
+      <div class="landing-content">
+        <div class="hero-section">
+          <div class="hero-text">
+            <h2>Automated Threat Intelligence Processing</h2>
+            <p>
+              Convert human-readable threat reports into machine-readable STIX
+              format for seamless integration with security platforms and threat
+              sharing networks.
+            </p>
+          </div>
+          <div class="hero-features">
+            <div class="feature-item">
+              <span class="feature-icon">📊</span>
+              <h3>NLP-Powered Analysis</h3>
+              <p>
+                Advanced natural language processing extracts indicators,
+                malware types, and threat actors from plain text.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">⚡</span>
+              <h3>Real-time Suggestions</h3>
+              <p>
+                Intelligent spelling corrections and suggestions for threat
+                intelligence terminology as you type.
+              </p>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🔧</span>
+              <h3>Instant STIX Generation</h3>
+              <p>
+                Automatically creates properly formatted STIX objects with
+                relationships and metadata.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-section">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Threat Intelligence?</h2>
+            <p>
+              Start converting your threat reports into structured STIX format
+              in seconds.
+            </p>
+            <a href="/main" class="start-btn"> Get Started </a>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <div class="about-content">
+            <h2>About This Project</h2>
+            <p>
+              This tool was created as a learning exercise to understand how
+              threat intelligence can be automatically converted into structured
+              formats. It demonstrates natural language processing, web
+              development, and cybersecurity concepts.
+            </p>
+            <p>
+              <strong>Technologies Used:</strong> Python Flask, RapidFuzz, stix2, spaCy,
+              JavaScript, HTML/CSS, and many others.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-section">
+          <div class="info-grid">
+            <div class="info-item">
+              <h4>What is STIX?</h4>
+              <p>
+                Structured Threat Information Expression (STIX) is a
+                standardised language for describing cyber threat information to
+                enable threat sharing and automated analysis.
+              </p>
+            </div>
+            <div class="info-item">
+              <h4>Why Use This Tool?</h4>
+              <p>
+                Eliminates manual STIX creation, reduces errors, and enables
+                real-time threat intelligence sharing across security teams and
+                platforms.
+              </p>
+            </div>
+            <div class="info-item">
+              <h4>Supported Indicators</h4>
+              <p>
+                Detects IP addresses, domains, email addresses, file hashes,
+                malware types, attack patterns, and threat actor information.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

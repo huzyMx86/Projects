@@ -1,0 +1,7 @@
+Flask==3.0.3
+Flask-Cors==4.0.0
+spacy==3.7.4
+iocextract==1.13.1
+tldextract==5.1.2
+rapidfuzz==3.9.3
+stix2==3.0.1

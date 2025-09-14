@@ -1,0 +1,784 @@
+/* STIX Generator Stylesheet */
+/* This stylesheet defines the visual appearance of the STIX converter application */
+
+/* Reset default browser styles for consistent appearance */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Application header section */
+.app-header {
+  text-align: center;
+  padding: 20px;
+  background-color: #2c3e50;
+  color: white;
+}
+
+.app-header h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #bdc3c7;
+}
+
+/* Main content container */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Input and output section wrapper */
+.io-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.io-wrapper > div {
+  flex: 1;
+}
+
+/* Common styles for input and relationships sections */
+.input-section,
+.relationships-section {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Section headers */
+.input-header,
+.relationships-header {
+  background-color: #34495e;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px 5px 0 0;
+}
+
+.input-header h3,
+.relationships-header h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Relationships header with button alignment */
+.relationships-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input area container layout */
+.input-container {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  min-height: 400px;
+}
+
+.input-container > div {
+  flex: 1;
+}
+
+/* Text area styling for input and output */
+textarea {
+  width: 100%;
+  height: 350px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 10px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  resize: vertical;
+  background-color: #fff;
+}
+
+/* Text area focus state */
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Suggestions panel styling */
+.suggestions-panel {
+  background-color: #ecf0f1;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  padding: 10px;
+  height: 350px;
+  overflow-y: auto;
+}
+
+.suggestions-panel h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+/* Suggestions list container */
+.suggestions-list {
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+
+/* Individual suggestion item */
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: all 0.2s ease;
+}
+
+/* Suggestion item hover effect */
+.suggestion-item:hover {
+  background-color: #e8f4fd;
+  border-color: #3498db;
+}
+
+/* Special styling for assumption items */
+.suggestion-item.assumption-item {
+  background-color: #fef9e7;
+  border-color: #f39c12;
+  cursor: default;
+}
+
+/* Section divider for suggestions */
+.suggestion-section {
+  margin: 10px 0;
+  padding: 5px 0;
+  color: #2980b9;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #bdc3c7;
+}
+
+.suggestion-icon {
+  font-size: 16px;
+  min-width: 20px;
+}
+
+/* Relationships section styling */
+.relationships-section {
+  padding: 0;
+}
+
+.relationships-container {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 4px;
+  min-height: 100px;
+}
+
+.relationships-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Individual relationship item */
+.relationship-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.relationship-icon {
+  font-size: 16px;
+  color: #3498db;
+}
+
+/* Button row container */
+.button-row {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Base button styles */
+.primary-btn,
+.secondary-btn,
+.copy-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+/* Primary action button - blue theme */
+.primary-btn {
+  background-color: #3498db;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.primary-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+/* Secondary action button - grey theme */
+.secondary-btn {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+/* Copy button - green theme for success actions */
+.copy-btn {
+  background-color: #27ae60;
+  color: white;
+}
+
+.copy-btn:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+/* Clear and delete buttons - red theme for destructive actions */
+#clearBtn,
+button[onclick*="removeRelationship"] {
+  background-color: #e74c3c !important;
+  color: white !important;
+}
+
+#clearBtn:hover:not(:disabled),
+button[onclick*="removeRelationship"]:hover:not(:disabled) {
+  background-color: #c0392b !important;
+}
+
+/* Download button - purple theme for export actions */
+#downloadBtn {
+  background-color: #9b59b6 !important;
+  color: white !important;
+}
+
+#downloadBtn:hover:not(:disabled) {
+  background-color: #8e44ad !important;
+}
+
+/* Add relationship button - green theme for creation */
+#addRelationshipBtn {
+  background-color: #27ae60 !important;
+  color: white !important;
+}
+
+#addRelationshipBtn:hover:not(:disabled) {
+  background-color: #229954 !important;
+}
+
+/* Save relationship button - green theme for saving */
+#saveRelationshipBtn {
+  background-color: #27ae60 !important;
+  color: white !important;
+}
+
+#saveRelationshipBtn:hover:not(:disabled) {
+  background-color: #229954 !important;
+}
+
+/* Cancel button - orange theme for cancellation */
+#cancelRelationshipBtn {
+  background-color: #f39c12 !important;
+  color: white !important;
+}
+
+#cancelRelationshipBtn:hover:not(:disabled) {
+  background-color: #e67e22 !important;
+}
+
+/* Disabled button state */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading animation for buttons */
+.primary-btn.loading {
+  background-color: #7fb3d3;
+  cursor: wait;
+}
+
+.primary-btn.loading:after {
+  content: "...";
+  animation: dots 1s steps(5, end) infinite;
+}
+
+/* Keyframe animation for loading dots */
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* Information panel styling */
+.info-panel {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Information grid layout */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual information item */
+.info-item {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.info-item h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.info-item p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Landing page specific styles */
+.landing-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Landing page header */
+.landing-header {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #2c3e50;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.landing-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.landing-subtitle {
+  font-size: 18px;
+  color: #bdc3c7;
+}
+
+/* Hero section on landing page */
+.hero-section {
+  margin-bottom: 30px;
+}
+
+.hero-text {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Feature grid on landing page */
+.hero-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Individual feature card */
+.feature-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Feature card hover effect */
+.feature-item:hover {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 18px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.feature-item p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Call-to-action section */
+.cta-section {
+  background-color: #3498db;
+  color: white;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cta-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.cta-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Start button on landing page */
+.start-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.start-btn:hover {
+  background-color: #1a252f;
+}
+
+/* About section on landing page */
+.about-section {
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.about-content h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.about-content p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* Modal dialog styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content container */
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal header section */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.modal-header h3 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Close button for modal */
+.close {
+  color: #aaa;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Modal form elements */
+.modal-body label {
+  display: block;
+  margin-bottom: 5px;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.modal-body select,
+.modal-body input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Form element focus state */
+.modal-body select:focus,
+.modal-body input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Modal footer with buttons */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Results page specific styles */
+.results-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.results-section {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0;
+}
+
+/* Results header with action buttons */
+.results-header {
+  background-color: #34495e;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.results-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Results container with output area */
+.results-container {
+  padding: 15px;
+}
+
+.results-container textarea {
+  height: 400px;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+/* Responsive design for tablets and mobile devices */
+@media (max-width: 768px) {
+  /* Stack sections vertically on smaller screens */
+  .io-wrapper {
+    flex-direction: column;
+  }
+
+  .input-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .input-container > div {
+    margin-bottom: 15px;
+  }
+
+  /* Reduce textarea height on mobile */
+  textarea {
+    height: 200px;
+  }
+
+  .suggestions-panel {
+    height: 150px;
+  }
+
+  /* Stack buttons vertically on mobile */
+  .button-row {
+    flex-direction: column;
+  }
+
+  /* Single column layout for grids */
+  .hero-features {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .relationships-container {
+    margin: 10px;
+  }
+}
+
+/* Custom scrollbar styling for suggestions list */
+.suggestions-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.suggestions-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 4px;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
+
+/* Edit button - teal theme */
+#editBtn {
+  background-color: #1abc9c !important;
+  color: white !important;
+}
+
+#editBtn:hover:not(:disabled) {
+  background-color: #16a085 !important;
+}
+
+/* Manual edit disclaimer text */
+#disclaimer {
+  color: #e67e22;
+  font-size: 13px;
+  padding: 0 15px 10px 15px;
+  display: none;
+}
+
+/* Permanent disclaimer message styling */
+.disclaimer-msg {
+  color: #e67e22;
+  font-size: 13px;
+  margin-top: 5px;
+  background-color: #fcf8e3;
+  padding: 8px 10px;
+  border-left: 4px solid #f39c12;
+  border-radius: 4px;
+}
+
+/* Edit button standard state */
+.edit-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.1s;
+}
+
+.edit-btn:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+/* Edit button active/pressed state */
+.edit-btn.active {
+  background-color: #1e8449;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
+}

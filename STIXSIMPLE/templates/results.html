@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STIX Results - STIX Generator</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header class="app-header">
+        <h1>STIX Results</h1>
+        <p class="subtitle">Your generated STIX threat intelligence</p>
+      </header>
+
+      <div class="results-wrapper">
+        <div class="results-section">
+          <div class="results-header">
+            <h3>Generated STIX JSON</h3>
+            <div class="results-actions">
+              <button id="editBtn" class="edit-btn">Edit</button>
+              <button id="copyBtn" class="copy-btn">Copy JSON</button>
+              <button id="downloadBtn" class="secondary-btn">Download</button>
+            </div>
+          </div>
+
+          <div class="results-container">
+            <textarea
+              id="outputArea"
+              readonly
+              rows="20"
+              placeholder="Your STIX JSON will appear here..."
+            ></textarea>
+            <p class="disclaimer-msg">
+              ⚠️ Please manually review and verify all entity names,
+              descriptions, and relationships before using or distributing this
+              STIX content.
+            </p>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="newAnalysisBtn" class="primary-btn">
+            Start New Analysis
+          </button>
+        </div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-grid">
+          <div class="info-item">
+            <h4>STIX Compliance</h4>
+            <p>
+              This STIX JSON follows the official OASIS STIX 2.1 specification
+              and includes proper object relationships.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>Usage</h4>
+            <p>
+              Copy or download the JSON to use in threat intelligence platforms,
+              SIEM systems, or security analysis tools.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>Ready to Use</h4>
+            <p>
+              The generated STIX bundle is ready for immediate use with standard
+              threat intelligence tools and platforms.
+            </p>
+          </div>
+          <div class="info-item">
+            <h4>Export Options</h4>
+            <p>
+              Use the copy button for quick sharing or download for file storage
+              and integration with other systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/results.js') }}"></script>
+  </body>
+</html>
